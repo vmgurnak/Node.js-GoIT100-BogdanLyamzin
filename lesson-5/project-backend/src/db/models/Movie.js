@@ -1,22 +1,28 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose';
 
-const movieShema = new Schema({
+const movieShema = new Schema(
+  {
     title: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     director: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     type: {
-        type: String,
-        enum: ["film", "serial"],
-        default: "film"
-    }
-});
+      type: String,
+      enum: ['film', 'serial'],
+      default: 'film',
+    },
+  },
+  {
+    versionKey: false,
+    timestamps: true,
+  },
+);
 
-const Movie = model("movie", movieShema);
+const Movie = model('movie', movieShema);
 // category => categories
 // mouse => mice
 

@@ -1,7 +1,7 @@
-import express from "express";
-import cors from "cors";
+import express from 'express';
+import cors from 'cors';
 
-import movies from "./movies.js";
+import movies from './movies.js';
 
 const app = express();
 
@@ -43,19 +43,19 @@ const cors = options => {
 //     next();
 // })
 
-app.get("/api/products", (req, res) => {
-    res.json([]);
-})
+app.get('/api/products', (req, res) => {
+  res.json([]);
+});
 
-app.get("/api/movies", (req, res) => {
-    res.json(movies);
-})
+app.get('/api/movies', (req, res) => {
+  res.json(movies);
+});
 
-app.use((req, res)=> {
-    res.status(404).json({
-        status: 404,
-        message: "Not Found"
-    })
-})
+app.use((req, res) => {
+  res.status(404).json({
+    status: 404,
+    message: 'Not Found',
+  });
+});
 
-app.listen(3000, () => console.log("Server running on 3000 PORT"));
+app.listen(3000, () => console.log('Server running on 3000 PORT'));
